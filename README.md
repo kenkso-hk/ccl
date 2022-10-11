@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+###D-board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+D-board is an advanced, responsive admin template built with Typescript, React, Redux Toolkit, Next.js and Tailwind CSS.
 
-## Available Scripts
+It includes 2 different layouts, 2 background color styles, 100+ components in every layout and lots of widgets and custom made reusable components to help you kickstart your next React project or application.
 
-In the project directory, you can run:
+To install, first make sure the correct `node` and `npm` are installed in your system.
 
-### `npm start`
+To check if they are installed correctly, run the following commands, which should print at least the following versions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`node -v` -> v16.13.0 LTS
+`npm -v` -> 8.1.0
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+D-board is 100% ready to use. Just unzip the included files and run the following commands:
 
-### `npm test`
+`npm install` to install all the required dependencies
+`npm run dev` to run the development server
+Open http://localhost:3000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To build and run a production ready bundle, run the following commands:
 
-### `npm run build`
+`npm run build`
+`npm run start` to preview the generated files
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The template includes the following structural elements:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Navbar
+- Left sidebar
+- Right sidebar
+- Main content section
+- Centered layouts for forms
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+D-board uses the default Next.js file and folder code structure. For more information on the project and to familiarize yourself with the file and folder structure used in a Next.js application, please go to the Next.js website.
 
-### `npm run eject`
+All pages are located in the `src/pages` folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+All components and widgets are located in the `src/components` folder.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All layouts and structural views are located in the `src/layouts` folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+CSS files are located in the `src/css` folder.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+####Important folders in the template
 
-## Learn More
+`src/components`
+Includes all the components ands widgets included in the template
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`src/css`
+Includes CSS files
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`src/layouts`
+Includes all layouts and structural views
 
-### Code Splitting
+`src/css/layouts`
+Includes CSS for all the included layouts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`src/css/components`
+Includes CSS for some of the included components, although most components use tailwind classes
 
-### Analyzing the Bundle Size
+`functions`
+Includes helpers and functions used in the template
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`json`
+Includes sample json files with data used in some views and components
 
-### Making a Progressive Web App
+`src/slices`
+Includes Redux Toolkit slices used in the app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`src/slices/navigation`
+Includes menus and navigation files that are used in the left sidebar and top navigation components
 
-### Advanced Configuration
+`src/pages`
+Includes all pages and sample views
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`public`
+Includes all the static assets and content used in the template
 
-### Deployment
+####Important files in the template
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+`src/store.tsx`
+Redux Toolkit config and global store
 
-### `npm run build` fails to minify
+`tailwind.config.js`
+Tailwind CSS default configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`src/pages/index.tsx`
+Template index file
+
+`src/pages/_app.tsx`
+Next.js custom App file. All CSS files are imported here
+
+`src/pages/_document.tsx`
+Next.js custom Document file. Custom HTML meta tags are defined here
+
+`postcss.config.js`
+PostCSS configuration for plugins used in the template
