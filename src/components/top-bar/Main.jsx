@@ -11,9 +11,11 @@ import {
   DropdownDivider,
 } from "@/base-components";
 import logoUrl from "@/assets/images/logo.svg";
+import cclLogo from "@/assets/images/ccl-logo-new.png"
 import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
 import classnames from "classnames";
+
 
 function Main(props) {
   const [searchDropdown, setSearchDropdown] = useState(false);
@@ -32,11 +34,11 @@ function Main(props) {
           {/* BEGIN: Logo */}
           <Link to="/" className="-intro-x hidden md:flex">
             <img
-              alt="Icewall Tailwind HTML Admin Template"
-              className="w-6"
-              src={logoUrl}
+              alt="CCL Logo"
+              className="w-6 'ccl-logo'" 
+              src={cclLogo}
             />
-            <span className="text-white text-lg ml-3"> Icewall </span>
+            <span className="text-white text-lg ml-3"> Health & Human Services </span>
           </Link>
           {/* END: Logo */}
           {/* BEGIN: Breadcrumb */}

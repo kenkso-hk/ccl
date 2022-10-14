@@ -71,13 +71,8 @@ function Main() {
 
   return (
     <>
-      <div className="intro-y items-center mt-8">
-        <h2 className="text-lg font-medium mr-auto">CHILD CARE LICENSING APPLICATION</h2>
-        <p>Please allow at least two weeks for our program to process this application.</p>
-        <p>You will receive an email to let you know the status of this application.</p>
-        <p>Submitting this application does not guarantee its approval.</p>
-        <br />
-        <p>Boxes shaded blue are for required information.</p>
+      <div className="intro-y flex items-center mt-8">
+        <h2 className="text-lg font-medium mr-auto">Form Validation</h2>
       </div>
       <div className="grid grid-cols-12 gap-6 mt-5">
         <div className="intro-y col-span-12 lg:col-span-6">
@@ -85,33 +80,36 @@ function Main() {
           <PreviewComponent className="intro-y box">
             {({ toggle }) => (
               <>
-                <div className="items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-                  <h2 className="font-medium text-base mr-auto mb-2">PURPOSE</h2>
-                  <p className="mb-2">This is a formal request to process a new child care application.</p>
-                  <div className="flex flex-col sm:flex-row">
-                    <input type="checkbox" className="ml-5" /> This is a new application.
-                    <input type="checkbox" /> This is a change of location..
-                    <input type="checkbox" /> This is a change of ownership.
+                <div className="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto">
+                    Implementation
+                  </h2>
+                  <div className="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
+                    <label
+                      className="form-check-label ml-0"
+                      htmlFor="show-example-1"
+                    >
+                      Show example code
+                    </label>
+                    <input
+                      onClick={toggle}
+                      className="form-check-input mr-0 ml-3"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
-
-                <div className="flex flex-col sm:flex-row items-center p-5">
-                  <h1 className="font-medium text-base mr-auto">
-                    GENERAL INFORMATION
-                  </h1>
-                </div>
-
                 <div className="p-5">
                   <Preview>
                     {/* BEGIN: Validation Form */}
                     <form className="validate-form" onSubmit={onSubmit}>
                       <div className="input-form">
-                        <label htmlFor="validation-form-1"
+                        <label
+                          htmlFor="validation-form-1"
                           className="form-label w-full flex flex-col sm:flex-row"
                         >
-                          Name (name on the License/Certificate/Exemption/Approval)
-                          <span className="form-label w-full flex flex-col sm:flex-row">
-                           dba Name (Home-Based only)
+                          Name
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, at least 2 characters
                           </span>
                         </label>
                         <input
