@@ -6,7 +6,8 @@ const sideMenu = atom({
     menu: [
       {
         icon: "Home",
-        title: "Dashboard",
+        // title: "Dashboard",
+        title: "Home",
         subMenu: [
           {
             icon: "",

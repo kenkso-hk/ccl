@@ -49,7 +49,7 @@ function Main(props) {
             switchColorScheme("theme-1");
           }}
           className={classnames({
-            "block w-8 h-8 cursor-pointer bg-emerald-900 rounded-full border-4 mr-1 hover:border-slate-200": true,
+            "block w-8 h-8 cursor-pointer bg-green-500 rounded-full border-4 mr-1 hover:border-slate-200": true,
             "border-slate-300 dark:border-darkmode-800/80":
               colorScheme == "theme-1",
             "border-white dark:border-darkmode-600": colorScheme != "theme-1",

@@ -80,11 +80,11 @@ function Router() {
       children: [
         {
           path: "/",
-          element: <DashboardOverview2 />,
+          element: <DashboardOverview1 />,
         },
         {
           path: "dashboard-overview-2",
-          element: <DashboardOverview1 />,
+          element: <DashboardOverview2 />,
         },
         {
           path: "dashboard-overview-3",

@@ -1,0 +1,26 @@
+
+.card:hover {
+    transform: translate3d(0, -5px, 0);
+
+}
+.card:hover .tab-selection{
+    height: 10px;
+    background-color: #22a595;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;  
+    transition: all 0.25s ease;
+}  
+.card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0, 0, 8px, -4px, rgba(0,0,0, 0.5);
+}
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+              

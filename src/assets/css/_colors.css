@@ -39,9 +39,20 @@
 
 /* Theme 1 colors */
 .theme-1 {
-    --color-primary: theme("colors.rgb.emerald.900");
-    --color-secondary: theme("colors.rgb.slate.200");
+    /* --color-primary: theme("colors.rgb.emerald.900"); */
+    /* --color-primary: theme("colors.rgb.green.500"); */
+    /* --color-primary: theme("colors.rgb.slate.200"); */
+    --color-primary: theme("colors.rgb.emerald.500");
+    /* --color-primary: theme("colors.utah.grnDark"); */
+    /* --color-primary: theme("colors.grnDark"); */
+    /* --color-primary: theme("colors.utahGrn.dark"); */
+    --color-primary: theme("colors.rgb.utahGrn");
+
+    /* --color-secondary: theme("colors.rgb.slate.200"); */
+    --color-secondary: theme("colors.rgb.utahGrnLt");
+
     --color-success: theme("colors.rgb.emerald.600");
+    /* --color-success: theme("colors.rgb.slate.200"); */
     --color-info: theme("colors.rgb.cyan.500");
     --color-warning: theme("colors.rgb.yellow.400");
     --color-pending: theme("colors.rgb.amber.500");
@@ -49,7 +60,9 @@
     --color-light: theme("colors.rgb.slate.100");
     --color-dark: theme("colors.rgb.slate.800");
     &.dark {
-        --color-primary: theme("colors.rgb.emerald.800");
+        /* --color-primary: theme("colors.rgb.emerald.800"); */
+        /* --color-primary: theme("colors.rgb.green.500"); */
+        --color-primary: theme("colors.rgb.utahGrn");
     }
 }
 

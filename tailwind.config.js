@@ -13,8 +13,25 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    // colors: {
+    //   'utahGrn': {
+    //     light: '#00a300',
+    //     DEFAULT: '#008000',
+    //     dark: '#005700',          
+    //   },
+    // },
     extend: {
       colors: {
+        
+        
+        
+        // 'grnDark': '#23a595',
+        // 'grnLight': '#23a595',
+        
+        // utah: {
+        //   'grnDark': '#23a595',
+        //   'grnLight': '#23a595',
+        // },
         rgb: toRGB({
           inherit: colors.inherit,
           current: colors.current,
@@ -32,6 +49,8 @@ module.exports = {
           yellow: colors.yellow,
           lime: colors.lime,
           green: colors.green,
+          utahGrn: '#22a595',
+          utahGrnLt: '#a7dbd5',
           emerald: colors.emerald,
           teal: colors.teal,
           cyan: colors.cyan,
