@@ -10,7 +10,10 @@ import {
   DropdownHeader,
   DropdownDivider,
 } from "@/base-components";
-import logoUrl from "@/assets/images/logo.svg";
+
+// import logoUrl from "@/assets/images/logo.svg";
+import logoUrl from "@/assets/images/ccl-logo.png";
+
 import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
 import classnames from "classnames";
@@ -27,16 +30,16 @@ function Main(props) {
   return (
     <>
       {/* BEGIN: Top Bar */}
-      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12">
+      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12 bg-gray-300" >
         <div className="h-full flex items-center">
           {/* BEGIN: Logo */}
           <Link to="/" className="-intro-x hidden md:flex">
             <img
               alt="Icewall Tailwind HTML Admin Template"
-              className="w-6"
+              className="w-64"
               src={logoUrl}
             />
-            <span className="text-white text-lg ml-3"> Icewall </span>
+            {/* <span className="text-white text-lg ml-3"> Icewall </span> */}
           </Link>
           {/* END: Logo */}
           {/* BEGIN: Breadcrumb */}
