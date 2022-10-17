@@ -9,7 +9,7 @@ import { Lucide } from "@/base-components";
 import classnames from "classnames";
 import TopBar from "@/components/top-bar/Main";
 import MobileMenu from "@/components/mobile-menu/Main";
-import MainColorSwitcher from "@/components/main-color-switcher/Main";
+// import MainColorSwitcher from "@/components/main-color-switcher/Main";
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main";
 import SideMenuTooltip from "@/components/side-menu-tooltip/Main";
 
@@ -28,7 +28,7 @@ function Main() {
   return (
     <div className="py-2 -mt-2">
       <DarkModeSwitcher />
-      <MainColorSwitcher />
+      {/* <MainColorSwitcher /> */}
       <MobileMenu />
       <TopBar />
       <div className="wrapper">

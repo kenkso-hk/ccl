@@ -30,16 +30,19 @@ function Main(props) {
   return (
     <>
       {/* BEGIN: Top Bar */}
-      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12 bg-gray-300" >
+      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12" >
         <div className="h-full flex items-center">
           {/* BEGIN: Logo */}
           <Link to="/" className="-intro-x hidden md:flex">
-            <img
-              alt="Icewall Tailwind HTML Admin Template"
-              className="w-64"
-              src={logoUrl}
-            />
-            {/* <span className="text-white text-lg ml-3"> Icewall </span> */}
+            <div className="w-72 p-2 rounded bg-white">
+              <img
+                alt="Icewall Tailwind HTML Admin Template"
+                className="w-64"
+                src={logoUrl}
+              />
+              {/* <span className="text-white text-lg ml-3"> Icewall </span> */}
+            </div>
+            
           </Link>
           {/* END: Logo */}
           {/* BEGIN: Breadcrumb */}
@@ -49,7 +52,7 @@ function Main(props) {
                 <a href="#">Application</a>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Dashboard
+                Home
               </li>
             </ol>
           </nav>

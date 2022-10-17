@@ -40,7 +40,7 @@ function Main(props) {
           className={classnames({
             "block w-8 h-8 cursor-pointer bg-blue-900 rounded-full border-4 mr-1 hover:border-slate-200": true,
             "border-slate-300 dark:border-darkmode-800/80":
-              colorScheme == "default",
+              colorScheme == "theme-1", 
             "border-white dark:border-darkmode-600": colorScheme != "default",
           })}
         ></a>
