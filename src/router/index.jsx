@@ -893,6 +893,10 @@ function Router() {
       element: <Register />,
     },
     {
+      path: "/CCL-Application",
+      element: <Register />,
+    },
+    {
       path: "/error-page",
       element: <ErrorPage />,
     },
