@@ -11,6 +11,7 @@ import dom from "@left4code/tw-starter/dist/js/dom";
 import classnames from "classnames";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import logoUrl from "@/assets/images/ccl-logo.png";
 
 
 function Main() {
@@ -72,13 +73,25 @@ function Main() {
 
   return (
     <>
-      <div className="intro-y items-center mt-8">
-        <h2 className="text-lg text-white font-medium mr-auto">CHILD CARE LICENSING APPLICATION</h2>
-        <p className="text-lg text-white">Please allow at least two weeks for our program to process this application.</p>
-        <p className="text-lg text-white">You will receive an email to let you know the status of this application.</p>
-        <p  className="text-lg text-white">Submitting this application does not guarantee its approval.</p>
+
+      <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-15 md:-mt-15 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-4" >
+        <div className="h-full flex items-center">
+          <div className="w-72 p-2 rounded bg-white">
+            <img
+              alt="Icewall Tailwind HTML Admin Template"
+              className="w-64"
+              src={logoUrl}
+            />
+          </div></div></div>
+
+
+      <div className="intro-y items-center mt-4">
+        <h1 className="text-lg text-white mr-auto"><b>CHILD CARE LICENSING APPLICATION</b></h1>
+        <p className="text-md text-white">Please allow at least two weeks for our program to process this application.</p>
+        <p className="text-md text-white">You will receive an email to let you know the status of this application.</p>
+        <p className="text-md text-white">Submitting this application does not guarantee its approval.</p>
         <br />
-        <p  className="text-lg text-white">Boxes shaded blue are for required information.</p>
+        <p className="text-md text-white">Boxes shaded blue are for required information.</p>
       </div>
       <div className="grid gap-6 mt-5">
         <div className="intro-y col-span-12 lg:col-span-6">
@@ -109,9 +122,11 @@ function Main() {
 
                       <div className="input-form">
                         <label htmlFor="validation-form-1"
-                          className="form-label w-full flex flex-col sm:flex-row grid grid-cols-6" >
+                          className="form-label w-full flex flex-col sm:flex-row xs=6 md=8" >
                           <b> Name (name on the License/Certificate/Exemption/Approval) </b>
                         </label>
+                      </div>
+                      <div className="grid grid-cols-2">
                         <input
                           {...register("name")}
                           id="validation-form-1"
@@ -128,6 +143,7 @@ function Main() {
                             {errors.name.message}
                           </div>
                         )}
+
                       </div>
 
                       <div className="input-form mt-3">

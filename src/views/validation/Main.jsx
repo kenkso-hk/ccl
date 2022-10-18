@@ -73,7 +73,7 @@ function Main() {
   return (
     <>
       <div className="intro-y items-center mt-8">
-        <h2 className="text-lg font-medium mr-auto">CHILD CARE LICENSING APPLICATION</h2>
+        <h1 className="text-lg font-medium mr-auto">CHILD CARE LICENSING APPLICATION</h1>
         <p>Please allow at least two weeks for our program to process this application.</p>
         <p>You will receive an email to let you know the status of this application.</p>
         <p>Submitting this application does not guarantee its approval.</p>
