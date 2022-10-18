@@ -33,7 +33,6 @@ function Main(props) {
         <div className="h-full flex items-center">
           {/* BEGIN: Logo */}
           <Link to="/" className="-intro-x hidden md:flex">
-<<<<<<< HEAD
             <div className="w-72 p-2 rounded bg-white">
               <img
                 alt="Icewall Tailwind HTML Admin Template"
@@ -42,15 +41,6 @@ function Main(props) {
               />
               {/* <span className="text-white text-lg ml-3"> Icewall </span> */}
             </div>
-            
-=======
-            <img
-              alt="CCL Logo"
-              className="w-6 'ccl-logo'" 
-              src={cclLogo}
-            />
-            <span className="text-white text-lg ml-3"> Health & Human Services </span>
->>>>>>> soleils-branch
           </Link>
           {/* END: Logo */}
           {/* BEGIN: Breadcrumb */}
