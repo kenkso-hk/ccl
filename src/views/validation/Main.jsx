@@ -12,7 +12,6 @@ import classnames from "classnames";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-
 function Main() {
   const schema = yup
     .object({
@@ -72,45 +71,46 @@ function Main() {
 
   return (
     <>
-      <div className="intro-y items-center mt-8">
-        <h1 className="text-lg font-medium mr-auto">CHILD CARE LICENSING APPLICATION</h1>
-        <p>Please allow at least two weeks for our program to process this application.</p>
-        <p>You will receive an email to let you know the status of this application.</p>
-        <p>Submitting this application does not guarantee its approval.</p>
-        <br />
-        <p>Boxes shaded blue are for required information.</p>
+      <div className="intro-y flex items-center mt-8">
+        <h2 className="text-lg font-medium mr-auto">Form Validation</h2>
       </div>
-      <div className="grid gap-6 mt-5">
+      <div className="grid grid-cols-12 gap-6 mt-5">
         <div className="intro-y col-span-12 lg:col-span-6">
           {/* BEGIN: Form Validation */}
           <PreviewComponent className="intro-y box">
             {({ toggle }) => (
               <>
-                <div className="items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-                  <h2 className="font-medium text-base mr-auto mb-2">PURPOSE</h2>
-                  <p className="mb-2">This is a formal request to process a new child care application.</p>
-                  <div className="flex ml-5">
-                    <div className="mr-12"> <input type="checkbox" /> This is a new application.</div>
-                    <div className="mr-12"><input type="checkbox" /> This is a change of location. </div>
-                    <div className="mr-12"><input type="checkbox" /> This is a change of ownership.</div>
+                <div className="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto">
+                    Implementation
+                  </h2>
+                  <div className="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
+                    <label
+                      className="form-check-label ml-0"
+                      htmlFor="show-example-1"
+                    >
+                      Show example code
+                    </label>
+                    <input
+                      onClick={toggle}
+                      className="form-check-input mr-0 ml-3"
+                      type="checkbox"
+                    />
                   </div>
                 </div>
-
-                <div className="flex flex-col sm:flex-row items-center p-5">
-                  <h1 className="font-medium text-base mr-auto">
-                    GENERAL INFORMATION
-                  </h1>
-                </div>
-
                 <div className="p-5">
                   <Preview>
                     {/* BEGIN: Validation Form */}
                     <form className="validate-form" onSubmit={onSubmit}>
-
                       <div className="input-form">
-                        <label htmlFor="validation-form-1"
-                          className="form-label w-full flex flex-col sm:flex-row grid grid-cols-6" >
-                          <b> Name (name on the License/Certificate/Exemption/Approval) </b>
+                        <label
+                          htmlFor="validation-form-1"
+                          className="form-label w-full flex flex-col sm:flex-row"
+                        >
+                          Name
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, at least 2 characters
+                          </span>
                         </label>
                         <input
                           {...register("name")}
@@ -121,7 +121,7 @@ function Main() {
                             "form-control": true,
                             "border-danger": errors.name,
                           })}
-                          placeholder="Name"
+                          placeholder="John Legend"
                         />
                         {errors.name && (
                           <div className="text-danger mt-2">
@@ -129,13 +129,15 @@ function Main() {
                           </div>
                         )}
                       </div>
-
                       <div className="input-form mt-3">
                         <label
                           htmlFor="validation-form-2"
                           className="form-label w-full flex flex-col sm:flex-row"
                         >
-                          <b> Email </b>
+                          Email
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, email address format
+                          </span>
                         </label>
                         <input
                           {...register("email")}
@@ -159,168 +161,75 @@ function Main() {
                           htmlFor="validation-form-3"
                           className="form-label w-full flex flex-col sm:flex-row"
                         >
-                          <b> Address where care will be provided: </b>
+                          Password
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, at least 6 characters
+                          </span>
                         </label>
-                        <div className="flex gap-1">
-                          <div className="grid grid-cols-1">
-                            <input
-                              {...register("address")}
-                              id="validation-form-3"
-                              type="password"
-                              name="address"
-                              className={classnames({
-                                "form-control": true,
-                                "border-danger": errors.password,
-                              })}
-                              placeholder="Street Address"
-                            />
+                        <input
+                          {...register("password")}
+                          id="validation-form-3"
+                          type="password"
+                          name="password"
+                          className={classnames({
+                            "form-control": true,
+                            "border-danger": errors.password,
+                          })}
+                          placeholder="secret"
+                        />
+                        {errors.password && (
+                          <div className="text-danger mt-2">
+                            {errors.password.message}
                           </div>
-                          <div className="grid grid-cols-1">
-                            <input
-                              {...register("address2")}
-                              id="validation-form-3"
-                              type="password"
-                              name="address2"
-                              className={classnames({
-                                "form-control": true,
-                                "border-danger": errors.password,
-                              })}
-                              placeholder="Apt #, Suite #, etc.."
-                            />
-                          </div>
-                          <div className="grid grid-cols-1">
-                            <input
-                              {...register("addressCity")}
-                              id="validation-form-3"
-                              type="password"
-                              name="addressCity"
-                              className={classnames({
-                                "form-control": true,
-                                "border-danger": errors.password,
-                              })}
-                              placeholder="City"
-                            />
-                          </div>
-                          <div className="grid grid-cols-1">
-                            <input
-                              {...register("addressState")}
-                              id="validation-form-3"
-                              type="password"
-                              name="addressState"
-                              className={classnames({
-                                "form-control": true,
-                                "border-danger": errors.password,
-                              })}
-                              placeholder="State"
-                            />
-                          </div>
-                          <div className="grid grid-cols-1">
-                            <input
-                              {...register("addressZip")}
-                              id="validation-form-3"
-                              type="password"
-                              name="addressZip"
-                              className={classnames({
-                                "form-control": true,
-                                "border-danger": errors.password,
-                              })}
-                              placeholder="Zip Code"
-                            />
-                          </div>
-                        </div>
+                        )}
                       </div>
-
                       <div className="input-form mt-3">
                         <label
                           htmlFor="validation-form-4"
-                          className="form-label w-full flex flex-col sm:flex-row">
-                          <b> Mailing Address: </b>
+                          className="form-label w-full flex flex-col sm:flex-row"
+                        >
+                          Age
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, integer only & maximum 3 characters
+                          </span>
                         </label>
+                        <input
+                          {...register("age")}
+                          id="validation-form-4"
+                          type="number"
+                          name="age"
+                          className={classnames({
+                            "form-control": true,
+                            "border-danger": errors.age,
+                          })}
+                          placeholder="21"
+                        />
+                        {errors.age && (
+                          <div className="text-danger mt-2">
+                            {errors.age.message}
+                          </div>
+                        )}
                       </div>
-
-                      <div className="gap-2 flex">
-                        <div className="grid grid-cols-1" >
-                          <input
-                            {...register("mailingAddress")}
-                            id="validation-form-"
-                            type="number"
-                            name="mailingAddress"
-                            className={classnames({
-                              "form-control": true,
-                              "border-danger": errors.age,
-                            })}
-                            placeholder="Address"
-                          />
-                        </div>
-                        <div className="grid grid-cols-1" >
-                          <input
-                            {...register("mailingAddress2")}
-                            id="validation-form-4"
-                            type="number"
-                            name="mailingAddress2"
-                            className={classnames({
-                              "form-control": true,
-                              "border-danger": errors.age,
-                            })}
-                            placeholder="Apt #, Suite #, etc..."
-                          /></div>
-                        <div className="grid grid-cols-1" >
-                          <input
-                            {...register("mailingCity")}
-                            id="validation-form-4"
-                            type="number"
-                            name="mailingCity"
-                            className={classnames({
-                              "form-control": true,
-                              "border-danger": errors.age,
-                            })}
-                            placeholder="City"
-                          /></div>
-                        <div className="grid grid-cols-1" >
-                          <input
-                            {...register("mailingState")}
-                            id="validation-form-4"
-                            type="number"
-                            name="mailingState"
-                            className={classnames({
-                              "form-control": true,
-                              "border-danger": errors.age,
-                            })}
-                            placeholder="State"
-                          /></div>
-                        <div className="grid grid-cols-1" >
-                          <input
-                            {...register("mailingZip")}
-                            id="validation-form-4"
-                            type="number"
-                            name="mailingZip"
-                            className={classnames({
-                              "form-control": true,
-                              "border-danger": errors.age,
-                            })}
-                            placeholder="Zip Code"
-                          /></div>
-                      </div>
-
-                      <div className="input-form mt-3 grid grid-col-12">
+                      <div className="input-form mt-3">
                         <label
                           htmlFor="validation-form-5"
-                          className="form-label w-full flex flex-col sm:flex-row "
+                          className="form-label w-full flex flex-col sm:flex-row"
                         >
-                          <b> Requested capacity (# of children): </b>
+                          Profile URL
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Optional, URL format
+                          </span>
                         </label>
-                      </div>
-
-                      <div className="grid grid-cols-12">
                         <input
-                          {...register("capacity")}
+                          {...register("url")}
                           id="validation-form-5"
                           type="text"
-                          name="capacity"
+                          name="url"
                           className={classnames({
                             "form-control": true,
                             "border-danger": errors.url,
                           })}
+                          placeholder="https://google.com"
                         />
                         {errors.url && (
                           <div className="text-danger mt-2">
@@ -328,40 +237,35 @@ function Main() {
                           </div>
                         )}
                       </div>
-
-                      <p className="mt-5">For licenses and certificates, the maximum capacity will be determined by the facility total square footage.
-                        You must follow your city ordinances for approved capacity.
-                        If your city allows for less than the approved capacity, you must follow the stricter rule. </p>
-
                       <div className="input-form mt-3">
                         <label
                           htmlFor="validation-form-6"
                           className="form-label w-full flex flex-col sm:flex-row"
                         >
-                          <b> Food Program Sponsor (if any): </b>
+                          Comment
+                          <span className="sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">
+                            Required, at least 10 characters
+                          </span>
                         </label>
-                        <input
+                        <textarea
                           {...register("comment")}
                           id="validation-form-6"
-                          type="text"
-                          name="sponsor"
+                          name="comment"
                           className={classnames({
                             "form-control": true,
-                            "border-danger": errors.url,
+                            "border-danger": errors.comment,
                           })}
-                        />
+                          placeholder="Type your comments"
+                        ></textarea>
+                        {errors.comment && (
+                          <div className="text-danger mt-2">
+                            {errors.comment.message}
+                          </div>
+                        )}
                       </div>
-
-                      <div className="mr-12 mt-3"> <input type="checkbox" className="mr-3" /><b>Check if you will be providing care as part of an American Indian tribe.</b></div>
-
                       <button type="submit" className="btn btn-primary mt-5">
-                        Submit
+                        Register
                       </button>
-
-                      <button type="submit" className="btn btn-secondary ml-5">
-                        Cancel
-                      </button>
-
                     </form>
                     {/* END: Validation Form */}
                   </Preview>

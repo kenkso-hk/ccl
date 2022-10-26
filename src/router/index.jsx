@@ -71,6 +71,7 @@ import Validation from "../views/validation/Main";
 import Chart from "../views/chart/Main";
 import Slider from "../views/slider/Main";
 import ImageZoom from "../views/image-zoom/Main";
+import CCLApplication from "../views/ccl-application/Main";
 
 function Router() {
   const routes = [
@@ -894,7 +895,7 @@ function Router() {
     },
     {
       path: "/CCL-Application",
-      element: <Register />,
+      element: <CCLApplication />,
     },
     {
       path: "/error-page",
