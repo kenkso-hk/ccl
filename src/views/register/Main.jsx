@@ -14,7 +14,10 @@ import * as yup from "yup";
 import logoUrl from "@/assets/images/ccl-logo.png";
 //import { useState } from "preact/hooks";
 import { useState, useEffect } from "react";
-import {ExemptBased, CenterBased} from "@/components/register-facility-type/ExemptCenter";
+import ExemptCenter from "../../components/register-exempt-center/Main";
+import CenterBased from "../../components/register-center/Main";
+import ExemptHome from "../../components/register-exempt-home/Main";
+import HomeBased from "../../components/register-home/Main";
 
 
 function Main() {
@@ -74,20 +77,25 @@ function Main() {
     }
   };
 
-  let [test, setTest] = useState('');
-function radioOnChange(){
+  let [facilityType, setfacilityType] = useState("");
 
-setTest (<ExemptBased/>);
-}
+  function radioOnTest(event) {
+    let facilityTypeOptions = event.target.value;
 
-function radioOnChange1(){
-  setTest (<CenterBased/>);
+    if (facilityTypeOptions === "home-based") {
+      setfacilityType(<HomeBased />)
+    } if (facilityTypeOptions === "exempt-home-based") {
+      setfacilityType(<ExemptHome />)
+    } if (facilityTypeOptions === "center-based") {
+      setfacilityType(<CenterBased />);
+    } if (facilityTypeOptions === "exempt-center-based") {
+      setfacilityType(<ExemptCenter />);
+    }
   }
 
 
   return (
     <>
-
       <div className="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-15 md:-mt-15 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-4" >
         <div className="w-72 p-2 rounded bg-white">
           <img
@@ -237,7 +245,6 @@ function radioOnChange1(){
                         </div>
                       </div>
 
-
                       <div className="input-form flex">
                         <div className="sm:flex-row mt-5 mr-12 ">
                           <label htmlFor="validation-form-1"
@@ -248,7 +255,6 @@ function radioOnChange1(){
                             </span>
                           </label>
                         </div></div>
-
 
                       <div className="flex gap-1">
                         <div className="grid grid-cols-1">
@@ -451,8 +457,6 @@ function radioOnChange1(){
                     <form className="validate-form" onSubmit={onSubmit}>
                     </form>
 
-
-
                     <button type="submit" className="btn btn-primary mt-5">
                       Submit
                     </button>
@@ -633,31 +637,145 @@ function radioOnChange1(){
                 <div className="ml-5 border-b-8 border-teal-600 mr-5 mb-2">
                   <div>
                     <div className="form-check mt-2">
-                      <input id="radio-switch-1" className="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-home-base"/>
+                      <input id="home-based" className="form-check-input" type="radio" name="vertical_radio_button" value="home-based" onChange={radioOnTest} />
                       <label className="form-check-label" htmlFor="radio-switch-1"><b>HOME-BASED</b> (Licensed Family; Residential Certificate)</label>
                     </div>
                     <div className="form-check mt-2">
-                      <input id="radio-switch-2" className="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-exempt-home-base" />
+                      <input id="exempt-home-based" className="form-check-input" type="radio" name="vertical_radio_button" value="exempt-home-based" onChange={radioOnTest} />
                       <label className="form-check-label" htmlFor="radio-switch-2"><b>EXEMPT HOME-BASED</b> (DWS Approved, FFN in Child's Home; DWS Approved, FFN in Provider's Home; Exempt Home / Tribe)</label>
                     </div>
                     <div className="form-check mt-2">
-                      <input id="radio-switch-3" className="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-center-base" onChange={radioOnChange1}/>
+                      <input id="center-based" className="form-check-input" type="radio" name="vertical_radio_button" value="center-based" onChange={radioOnTest} />
                       <label className="form-check-label" htmlFor="radio-switch-3"><b>CENTER-BASED</b> (Center; Commercial Preschool; Hourly Center; Out of School Time Program)</label>
                     </div>
                     <div className="form-check mt-2 mb-3">
-                      <input id="radio-switch-3" className="form-check-input" type="radio" name="vertical_radio_button" value="vertical-radio-exempt-center-base" onChange={radioOnChange} />
+                      <input id="exempt-center-based" className="form-check-input" type="radio" name="vertical_radio_button" value="exempt-center-based" onChange={radioOnTest} />
                       <label className="form-check-label" htmlFor="radio-switch-4"><b>EXEMPT CENTER-BASED </b> (Licensing Exempt Programs)</label>
                     </div>
                   </div>
-          
-               <div>
-                <h1>{test}</h1>
-               </div>
-            
+                </div>
+                <div className="mt-3">
+                  {facilityType}
                 </div>
               </>
             )}
           </PreviewComponent>
+
+          <PreviewComponent className="intro-y box mt-4 pb-4">
+            {({ toggle }) => (
+              <>
+                <div className="items-center p-5 border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto mb-1">DOCUMENTS REQUIRED</h2>
+                  <p className="mr-10">You can upload a copy of any document by clicking the "Select File" button. Uploaded documents will be
+                    submitted with this application. Only documents in PDF format are accepted.</p>
+                </div>
+                <ul className="ml-10 mr-10">
+                  <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b>A copy of your current fire clearance or a copy of a document from the local fire
+                    authority stating a fire clearance is not needed. (Contact your local fire authority for this.)</li>
+                  <button type="submit" className="btn btn-primary mt-1 mb-3">Select File</button>
+                  <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'} </b>A copy of your current business license or a copy of a receipt verifying application or a
+                    copy of a document from a city/county employee stating a business license is not required. (Contact your city/county for this.)</li>
+                  <button type="submit" className="btn btn-primary mt-1 mb-3">Select File</button>
+                  <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b>  copy of your current local health department kitchen inspection.
+                    (Contact your local health department for this.</li>
+                  <button type="submit" className="btn btn-primary mt-1">Select File</button>
+                </ul>
+                <p className="ml-5 mr-5 mb-3 mt-4">You can also email, mail, or hand deliver required documents.</p>
+                <p className="ml-5 mr-10">You can submit required documentation at any time. However, your application will not be complete
+                  until Child Care Licensing has received all required documents, background checks, and all required fees.
+                  You have 6 months from the date of your application to submit all required documents and fees or your
+                  application will be denied.</p>
+              </>
+            )}
+          </PreviewComponent>
+
+          <PreviewComponent className="intro-y box mt-4 pb-4">
+            {({ toggle }) => (
+              <>
+                <div className="items-center p-5 border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto">FEES</h2>
+                  <div className="mt-2 mr-10 ml-5">
+                    <ul>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $62.00 License fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $20.00 Background Screening fee (1 form and fee per covered individual).</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $33.25 Fingerprint fee (1 set of fingerprints and fee per covered individual
+                        who is at least 18 years of age).</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="ml-5 mr-5 mb-3"><b>Credit/Debit</b> card payments can be made through our website.</p>
+                <p className="ml-5 mr-10"><b>Checks</b> or <b>money orders</b> made payable to "Utah Department of Health" can be mailed to
+                  PO Box 142003, Salt Lake City UT 84114-2003.</p>
+
+              </>
+            )}
+          </PreviewComponent>
+
+          <PreviewComponent className="intro-y box mt-4 pb-4">
+            {({ toggle }) => (
+              <>
+                <h2 className="font-medium text-base mr-auto items-center p-5 border-slate-200/60 dark:border-darkmode-400">
+                  INFORMATION SHARING ACKNOWLEDGEMENT</h2>
+                <input className="ml-5 mr-2 mb-3" type="checkbox" />Acknowledged
+                <p className="ml-5 mr-10">If you receive or plan to receive CCDF (Child Care and Development Funds) money from DWS,
+                  Child Care Licensing will share your personal identifying information (Name, Address, Phone number, Date of birth,
+                  Email Address, etc.) with the Department of Workforce Services(DWS). This information will be shared and used only for
+                  verification purposes related to processing payments from DWS.</p>
+
+              </>
+            )}
+          </PreviewComponent>
+
+          <PreviewComponent className="intro-y box mt-4 pb-4">
+            {({ toggle }) => (
+              <>
+                <h2 className="font-medium text-base mr-auto items-center p-5 border-slate-200/60 dark:border-darkmode-400">
+                  CERTIFICATION OF UNDERSTANDING</h2>
+                <p className="ml-5 mr-10">You must check the box to certify your understanding and agreement of the conditions below.</p>
+                <p className="ml-5 mr-10 mt-2">If you receive or plan to receive CCDF (Child Care and Development Funds) money from DWS,
+                  Child Care Licensing will share your personal identifying information (Name, Address, Phone number, Date of birth, Email
+                  Address, etc.) with the Department of Workforce Services(DWS). This information will be shared and used only for verification
+                  purposes related to processing payments from DWS.</p>
+                <p className="ml-5 mr-10 mt-2">I agree, for the purpose of determining compliance with child care licensing rules
+                  established by the Department of Health and Utah State licensing laws, to allow authorized Department of Health
+                  representatives with proper identification to:</p>
+                <div className="mt-2 mr-10 ml-10">
+                  <ul>
+                    <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b>Enter and inspect any part of the home, property, and premises without a warrant at any time children are in care.</li>
+                    <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b>Review child care documents.</li>
+                    <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b>Interview caregivers, children, employees, household members and others as necessary.</li>
+                  </ul>
+                </div>
+                <p className="ml-5 mr-10 mt-2"><b>I agree</b> to read and follow the child care rules and laws established by the State of Utah.</p>
+                <p className="ml-5 mr-10 mt-2"><b>I authorize</b>  investigation of all statements contained herein and understand that
+                  misrepresentation or omission of facts may result in denial of my application.</p>
+                <p className="ml-5 mr-10 mt-2">I do hereby state that, based on my best information and belief, that neither myself,
+                  any employee or volunteer in my child care program, or any individual residing in my home has ever been convicted of
+                  a felony or a misdemeanor, had a supported finding of child abuse or neglect from the Department of Human Services,
+                  had a substantiated finding from a juvenile court of abuse or neglect of a child, or is currently listed on the sex
+                  offender registry.</p>
+                <div className="ml-5 mr-10 mt-2">
+                  <input className="mr-2" type="checkbox" /><b>I do hereby state that I understand the statements above and that
+                    the information provided on this application is true and correct to the best of my knowledge.</b>
+                </div>
+                <h1 className="font-medium text-base mr-auto ml-5 mr-10 mt-2">
+                  An application is considered complete when all required documents and fees are received by Child Care Licensing.</h1>
+              </>
+            )}
+          </PreviewComponent>
+
+          <div className="mb-5">
+            <button type="submit" className="btn btn-primary btn-lg active mt-5" style={{ color: 'teal', background: 'white' }}
+            onMouseOver={() => {
+              console.log("Event:MouseEnter");}}
+            >
+              Submit
+            </button>
+
+            <button type="submit" className="btn btn-secondary btn-lg active ml-5" style={{ color: 'teal', background: 'lightgray' }}>
+              Cancel
+            </button>
+          </div>
 
           {/* END: Form Validation */}
           {/* BEGIN: Success Notification Content */}
