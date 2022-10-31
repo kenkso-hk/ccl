@@ -4,6 +4,8 @@ import {
   Preview,
   Source,
   Highlight,
+  Dropdown,
+  DropdownToggle,
 } from "@/base-components";
 import { useForm } from "react-hook-form";
 import Toastify from "toastify-js";
@@ -18,6 +20,7 @@ import ExemptCenter from "../../components/register-exempt-center/Main";
 import CenterBased from "../../components/register-center/Main";
 import ExemptHome from "../../components/register-exempt-home/Main";
 import HomeBased from "../../components/register-home/Main";
+import DropdownTime from "../../components/register-dropdown-time/Main";
 
 
 function Main() {
@@ -93,6 +96,10 @@ function Main() {
     }
   }
 
+
+  function onClickTime() {
+    <DropdownTime />
+  }
 
   return (
     <>
@@ -457,13 +464,7 @@ function Main() {
                     <form className="validate-form" onSubmit={onSubmit}>
                     </form>
 
-                    <button type="submit" className="btn btn-primary mt-5">
-                      Submit
-                    </button>
-
-                    <button type="submit" className="btn btn-secondary ml-5">
-                      Cancel
-                    </button>
+                  
 
 
                     {/* END: Validation Form */}
@@ -594,8 +595,106 @@ function Main() {
           <PreviewComponent className="intro-y box mt-4 pb-4">
             {({ toggle }) => (
               <>
-                <div className="items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                <div className="items-center p-5">
                   <h2 className="font-medium text-base mr-auto mb-2">PLEASE PROVIDE THE FOLLOWING INFORMATION</h2>
+                </div>
+                <table className="ml-5 mr-5" style={{ background: "whitesmoke" }}>
+                  <tr className="" style={{ background: "lightseagreen", color: "white" }}>
+                    <th className="p-4" >Day</th>
+                    <th className="p-4" >Start Time</th>
+                    <th className="p-4" >End Time</th>
+                    <th className="p-4" >Day</th>
+                    <th className="p-4" >Start Time</th>
+                    <th className="p-4" >End Time</th>
+                  </tr>
+                  <tr>
+                    <td colSpan={3} className="border-b border-slate-200/60 dark:border-darkmode-400">Check the days and select the times you will provide child care:</td>
+                    <td colSpan={3} className="border-b border-slate-200/60 dark:border-darkmode-400">Check any additional days and select any additional times you will provide child care
+                      (for example, you will provide child care before school and then after school):</td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Monday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Monday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Tuesday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Tuesday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Wednesday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Wednesday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Thursday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Thursday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Friday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Friday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Saturday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Saturday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                  <tr className="border-b border-slate-200/60 dark:border-darkmode-400">
+                    <td><input type="checkbox" className="" /><b className="ml-2">Sunday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                    <td><input type="checkbox" className="" /><b className="ml-2">Sunday</b></td>
+                    <td><DropdownTime /></td>
+                    <td><DropdownTime /></td>
+                  </tr>
+                </table>
+                <div className="ml-5 mt-3"><input type="checkbox" className="mr-1" />
+                  <b>Check here if the days and times you provide child care are different each week.</b></div>
+                <div className="mt-3 mr-10">
+                  <label className="ml-5"><b>Additional information about when child care is provided: </b></label>
+                  <textarea
+                    {...register("comment")}
+                    id="validation-form-6"
+                    name="comment"
+                    className={classnames({
+                      "form-control": true,
+                      "border-danger": errors.comment,
+                    }, "ml-4")}
+                    placeholder="Type your comments"
+                  ></textarea>
+                  <p className="ml-5">(2000 characters remaining)</p>
+                  <p className="mt-3 ml-5">Please notify your licensor if these hours change.</p>
+                </div>
+              </>
+            )}
+          </PreviewComponent>
+
+          <PreviewComponent className="intro-y box mt-4 pb-4">
+            {({ toggle }) => (
+              <>
+                <div className="items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto mb-2">CHILD CARE SCHEDULE</h2>
                   <label><b>What ages of children will you accept?</b></label>
                 </div>
                 <div className="flex ml-5 mt-3">
@@ -609,6 +708,7 @@ function Main() {
               </>
             )}
           </PreviewComponent>
+
 
           <PreviewComponent className="intro-y box mt-4 pb-4">
             {({ toggle }) => (
@@ -763,16 +863,12 @@ function Main() {
               </>
             )}
           </PreviewComponent>
-
           <div className="mb-5">
-            <button type="submit" className="btn btn-primary btn-lg active mt-5" style={{ color: 'teal', background: 'white' }}
-            onMouseOver={() => {
-              console.log("Event:MouseEnter");}}
-            >
+            <button type="submit" className="btn btn-primary btn-lg active mt-5 solTest" style={{color: 'teal', background: 'white'}}>
               Submit
             </button>
 
-            <button type="submit" className="btn btn-secondary btn-lg active ml-5" style={{ color: 'teal', background: 'lightgray' }}>
+            <button type="submit" className="btn btn-secondary btn-lg active ml-5" style={{ color: 'gray', background: 'lightgray' }}>
               Cancel
             </button>
           </div>
