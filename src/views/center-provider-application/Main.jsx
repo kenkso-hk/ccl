@@ -99,7 +99,7 @@ function Main() {
   }
 
   function onClickTime() {
-    ;<DropdownTime />
+    ; <DropdownTime />
   }
 
   return (
@@ -205,20 +205,6 @@ function Main() {
                             })}
                             placeholder='Name'
                           />
-                        </div>
-                        <div className='ml-16 w-64'>
-                          <span>
-                            <input
-                              {...register('dba')}
-                              id='validation-form-1a'
-                              type='text'
-                              name='dba'
-                              className={classnames({
-                                'form-control': true,
-                                'border-danger': errors.dba,
-                              })}
-                            />
-                          </span>
                         </div>
                       </div>
 
@@ -1292,6 +1278,8 @@ function Main() {
               </>
             )}
           </PreviewComponent>
+
+          
 
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             {({ toggle }) => (
