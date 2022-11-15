@@ -1279,7 +1279,42 @@ function Main() {
             )}
           </PreviewComponent>
 
-          
+          <PreviewComponent className='intro-y box mt-4 pb-4'>
+            {({ toggle }) => (
+              <>
+                <div className="items-center p-5 border-slate-200/60 dark:border-darkmode-400">
+                  <h2 className="font-medium text-base mr-auto">FEES</h2>
+                  <div className="mt-2 mr-10 ml-5">
+                    <ul>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $62.00 License fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $200.00 New Center fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $1.75 Per Child fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $20.00 Background Screening fee (1 form and fee per covered individual).</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $33.25 Fingerprint fee (1 set of fingerprints and fee per covered individual who is at least 18 years of age).</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="ml-5 mr-5 mb-3"><b>Credit/Debit</b> card payments can be made through our website.</p>
+              </>
+            )}
+          </PreviewComponent>
+
+
+          <PreviewComponent className='intro-y box mt-4 pb-4'>
+            {({ toggle }) => (
+              <>
+                <h2 className="font-medium text-base mr-auto items-center p-5">
+                  INFORMATION SHARING ACKNOWLEDGEMENT</h2>
+                <input className="ml-5 mr-2 mb-3" type="checkbox" />Acknowledged
+                <p className="ml-5 mr-10">If you receive or plan to receive CCDF (Child Care and Development Funds) money from DWS,
+                  Child Care Licensing will share your personal identifying information (Name, Address, Phone number, Date of birth,
+                  Email Address, etc.) with the Department of Workforce Services(DWS). This information will be shared and used only for
+                  verification purposes related to processing payments from DWS.</p>
+
+              </>
+            )}
+          </PreviewComponent>
+
 
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             {({ toggle }) => (
