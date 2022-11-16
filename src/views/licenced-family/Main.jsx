@@ -15,7 +15,11 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import logoUrl from '@/assets/images/ccl-logo.png'
 //import { useState } from "preact/hooks";
-import Reeact, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import ExemptCenter from '../../components/register-exempt-center/Main'
+import CenterBased from '../../components/register-center/Main'
+import ExemptHome from '../../components/register-exempt-home/Main'
+import HomeBased from '../../components/register-home/Main'
 import DropdownTime from '../../components/register-dropdown-time/Main'
 import { add } from 'lodash'
 
@@ -76,12 +80,10 @@ function Main() {
     }
   }
 
-const [isCheck, setIsCheck] = useState(false);
+let [addressActive, setAddressActive] = useState('true');
 
-function handleClick(){
-  setIsCheck(prevValue => {
-    return !prevValue;
-});
+function test(){
+  console.log(addressActive);
 }
 
   return (
@@ -356,7 +358,7 @@ function handleClick(){
                           <div
                             className='mr-12 mb-4'
                           >
-                            <input type='checkbox' onClick={handleClick}
+                            <input type='checkbox' name ="Status" value = "Status" checked={addressActive.Active} onChange={test}
                           /> Same as the address above
                           </div>
                         </div>
@@ -374,7 +376,7 @@ function handleClick(){
                               'border-danger': errors.age,
                             })}
                             placeholder='Address'
-                            disabled={isCheck}
+                            disabled={addressActive}
                           />
                         </div>
                         <div className='grid grid-cols-1'>
@@ -388,7 +390,7 @@ function handleClick(){
                               'border-danger': errors.age,
                             })}
                             placeholder='Apt #, Suite #, etc...'
-                            disabled={isCheck}
+                            disabled={addressActive}
                           />
                         </div>
                         <div className='grid grid-cols-1'>
@@ -402,7 +404,7 @@ function handleClick(){
                               'border-danger': errors.age,
                             })}
                             placeholder='City'
-                            disabled={isCheck}
+                            disabled={addressActive}
                           />
                         </div>
                         <div className='grid grid-cols-1'>
@@ -416,7 +418,7 @@ function handleClick(){
                               'border-danger': errors.age,
                             })}
                             placeholder='State'
-                            disabled={isCheck}
+                            disabled={addressActive}
                           />
                         </div>
                         <div className='grid grid-cols-1'>
@@ -430,7 +432,7 @@ function handleClick(){
                               'border-danger': errors.age,
                             })}
                             placeholder='Zip Code'
-                            disabled={isCheck}
+                            disabled={addressActive}
                           />
                         </div>
                       </div>
