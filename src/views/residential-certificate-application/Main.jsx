@@ -76,13 +76,13 @@ function Main() {
     }
   }
 
-const [isCheck, setIsCheck] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
 
-function handleClick(){
-  setIsCheck(prevValue => {
-    return !prevValue;
-});
-}
+  function handleClick() {
+    setIsCheck(prevValue => {
+      return !prevValue;
+    });
+  }
 
   return (
     <>
@@ -98,7 +98,7 @@ function handleClick(){
 
       <div className='intro-y items-center mt-4'>
         <h1 className='text-lg text-white mr-auto'>
-          <b>NEW CENTER PROVIDER APPLICATION</b>
+          <b>NEW RESIDENTIAL CERTIFICATE APPLICATION</b>
         </h1>
         <p className='text-md text-white'>
           {' '}
@@ -357,7 +357,7 @@ function handleClick(){
                             className='mr-12 mb-4'
                           >
                             <input type='checkbox' onClick={handleClick}
-                          /> Same as the address above
+                            /> Same as the address above
                           </div>
                         </div>
                       </div>
@@ -1124,11 +1124,11 @@ function handleClick(){
                   })}
                   placeholder='Alt Phone'
                 />
-               
+
               </div>
-              <button 
-              className='btn btn-primary btn-md active mt-7'
-              style={{ color: 'teal', background: 'white' }}>Add</button>
+              <button
+                className='btn btn-primary btn-md active mt-7'
+                style={{ color: 'teal', background: 'white' }}>Add</button>
             </div>
 
             {({ toggle }) => (
@@ -1177,9 +1177,9 @@ function handleClick(){
               </div>
               <div className='flex ml-5'>
                 <p className='pr-5 mt-5'>
-                  You can upload a copy of any document by clicking the "Select
-                  File" button. Uploaded documents will be submitted with this
-                  application. Only documents inPDF format are accepted.
+                  You can upload a copy of any document by clicking the "Select File" button.
+                  Uploaded documents will be submitted with this application.
+                  Only documents in PDF format are accepted.
                 </p>
               </div>
               <div className='flex ml-5'>
@@ -1188,44 +1188,26 @@ function handleClick(){
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current fire clearance or a copy of a
-                    document from the local fire authority stating a fire
-                    clearance is not needed. (Contact your local fireauthority
-                    for this.)
+                    A copy of your current fire clearance or a copy of a document from the
+                    local fire authority stating a fire clearance is not needed.
+                    (Contact your local fire authority for this.)
                   </li>
                   <button className='btn'>Select File</button>
                   <li className='mt-5'>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current business license or a copy of a
-                    receipt verifying application or a copy of a document from a
-                    city/county employee stating abusiness license is not
-                    required. (Contact your city/county for this.)
+                    A copy of your current business license or a copy of a receipt verifying
+                    application or a copy of a document from a city/county employee stating
+                    a business license is not required. (Contact your city/county for this.)
                   </li>
                   <button className='btn'>Select File</button>
                   <li className='mt-5'>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current local health department kitchen
-                    inspection. (Contact your local health department for this.)
-                  </li>
-                  <button className='btn'>Select File</button>
-                  <li className='mt-5'>
-                    <b style={{ color: 'teal' }} className='mr-2'>
-                      {'\u2022'}
-                    </b>
-                    A copy of the proposed director's educational credentials.
-                    (found in rule)
-                  </li>
-                  <button className='btn'>Select File</button>
-                  <li className='mt-5'>
-                    <b style={{ color: 'teal' }} className='mr-2'>
-                      {'\u2022'}
-                    </b>
-                    A copy of your facility floor plan (does not need to be an
-                    architectural rendition).
+                    A copy of your current local health department kitchen inspection.
+                    (Contact your local health department for this.)
                   </li>
                   <button className='btn'>Select File</button>
                 </ul>
@@ -1235,12 +1217,11 @@ function handleClick(){
               </div>
               <div className='flex ml-5'>
                 <p className='pr-5'>
-                  You can submit required documentation at any time. However,
-                  your application will not be complete until Child Care
-                  Licensing has received all required documents, background
-                  checks, and all required fees. You have 6 months from the date
-                  of your application to submit all required documents and fees
-                  oryour application will be denied.
+                  You can submit required documentation at any time. However, your application 
+                  will not be complete until Child Care Licensing has received all required 
+                  documents, background checks, and all required fees. You have 6 months from 
+                  the date of your application to submit all required documents and fees or your 
+                  application will be denied.
                 </p>
               </div>
             </>
@@ -1273,8 +1254,6 @@ function handleClick(){
                   <div className="mt-2 mr-10 ml-5">
                     <ul>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $62.00 License fee.</li>
-                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $200.00 New Center fee.</li>
-                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $1.75 Per Child fee.</li>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $20.00 Background Screening fee (1 form and fee per covered individual).</li>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $33.25 Fingerprint fee (1 set of fingerprints and fee per covered individual who is at least 18 years of age).</li>
                     </ul>

@@ -73,6 +73,8 @@ import Slider from '../views/slider/Main'
 import ImageZoom from '../views/image-zoom/Main'
 import CCLApplication from '../views/ccl-application/Main'
 import CenterProviderApplication from '../views/center-provider-application/Main'
+import LicenseFamilyApplication from '../views/licenced-family-application/Main'
+import ResidentialCertificateApplication from "../views/residential-certificate-application/Main"
 
 function Router() {
   const routes = [
@@ -901,6 +903,14 @@ function Router() {
     {
       path: '/center-provider-application',
       element: <CenterProviderApplication />,
+    },
+    {
+      path:'/licensed-family-application',
+      element: <LicenseFamilyApplication />,
+    },
+    {
+      path:'/residential-certificate-application',
+      element: <ResidentialCertificateApplication />,
     },
     {
       path: '/error-page',
