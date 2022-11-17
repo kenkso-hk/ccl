@@ -76,13 +76,13 @@ function Main() {
     }
   }
 
-const [isCheck, setIsCheck] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
 
-function handleClick(){
-  setIsCheck(prevValue => {
-    return !prevValue;
-});
-}
+  function handleClick() {
+    setIsCheck(prevValue => {
+      return !prevValue;
+    });
+  }
 
   return (
     <>
@@ -98,7 +98,7 @@ function handleClick(){
 
       <div className='intro-y items-center mt-4'>
         <h1 className='text-lg text-white mr-auto'>
-          <b>NEW CENTER PROVIDER APPLICATION</b>
+          <b>NEW CHILD CARE CENTER PROVIDER APPLICATION</b>
         </h1>
         <p className='text-md text-white'>
           {' '}
@@ -357,7 +357,7 @@ function handleClick(){
                             className='mr-12 mb-4'
                           >
                             <input type='checkbox' onClick={handleClick}
-                          /> Same as the address above
+                            /> Same as the address above
                           </div>
                         </div>
                       </div>
@@ -970,46 +970,35 @@ function handleClick(){
 
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             <>
-              <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400'>
-                <h2 className='font-medium text-base mr-auto'>
-                  COVERED INDIVIDUALS
-                </h2>
-              </div>
-              <div className='flex ml-5'>
-                <p className='pr-5'>
-                  For each covered individual, we must receive a background
-                  screening form, fingerprints (when required), and all required
-                  fees as part of this application.<br></br>
-                  Covered individual means: providers; owners; members of the
-                  governing body; employees; caregivers, volunteers, excluding
-                  parents of children enrolled in the program; individuals age
-                  12 years and older residing in a facility where child care is
-                  provided; and anyone who has unsupervised contact with any
-                  child in care. This information will be used to screen covered
-                  individuals for criminal convictions and child abuse/neglect.
-                </p>
-              </div>
-            </>
+            <label htmlFor='validation-form-1' className='form-label ml-5 font-bold intro-y mt-4 pb-4 text-lg'>
+            PERSONNEL INFORMATION
+            </label>
             <div className='form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0'>
-              <label className='form-check-label mr-5' htmlFor='show-example-5'>
+              <label className='form-check-label mr-5 ml-5 font-bold' htmlFor='show-example-5'>
                 Ownership Type:
               </label>
               <div className='flex flex-col sm:flex-row items-center'>
                 <select
-                  className='form-select form-select-md sm:mt-2 sm:mr-2'
+                  className='form-select form-select-md sm:mt-2 sm:mr-2 mb-3'
                   aria-label='.form-select-lg example'
                 >
                   <option>--Select--</option>
-                  <option>Liam Neeson</option>
-                  <option>Daniel Craig</option>
+                  <option>Individual Owner / Sole Proprietor</option>
+                  <option>Partnership</option>
+                  <option>Limited Liability Company</option>
+                  <option>For Profit Corporation</option>
+                  <option>Non-Profit Corporation -- 501(c)(3)</option>
+                  <option>Local Government</option>
+                  <option>State Government</option>
+                  <option>Federal Government</option>
                 </select>
               </div>
             </div>
 
             <div className='flex gap-1 ml-5 mb-5 mt-5'>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Licensee Name: </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Licensee Name:
                 </label>
                 <input
                   {...register('address')}
@@ -1024,8 +1013,8 @@ function handleClick(){
                 />
               </div>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Email: </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Email:
                 </label>
                 <input
                   {...register('address2')}
@@ -1040,8 +1029,8 @@ function handleClick(){
                 />
               </div>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Phone: </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Phone:
                 </label>
                 <input
                   {...register('addressCity')}
@@ -1057,19 +1046,19 @@ function handleClick(){
               </div>
             </div>
 
-            <label htmlFor='validation-form-1' className='form-label ml-5'>
-              <b>DIRECTOR(S) </b>
+            <label htmlFor='validation-form-1' className='form-label ml-5 font-bold mt-3'>
+              DIRECTOR(S)
             </label>
             <div className='flex gap-1 ml-5'>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>First Name </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  First Name
                 </label>
                 <input
                   {...register('address')}
                   id='validation-form-3'
-                  type='password'
-                  name='address'
+                  type='text'
+                  name='directorFirstName'
                   className={classnames({
                     'form-control': true,
                     'border-danger': errors.password,
@@ -1078,14 +1067,14 @@ function handleClick(){
                 />
               </div>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Last Name </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Last Name
                 </label>
                 <input
                   {...register('address2')}
                   id='validation-form-3'
-                  type='password'
-                  name='address2'
+                  type='text'
+                  name='directorLastName'
                   className={classnames({
                     'form-control': true,
                     'border-danger': errors.password,
@@ -1094,14 +1083,14 @@ function handleClick(){
                 />
               </div>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Phone# </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Phone#
                 </label>
                 <input
                   {...register('addressCity')}
                   id='validation-form-3'
-                  type='password'
-                  name='addressCity'
+                  type='text'
+                  name='phoneDirectorPhone'
                   className={classnames({
                     'form-control': true,
                     'border-danger': errors.password,
@@ -1110,27 +1099,44 @@ function handleClick(){
                 />
               </div>
               <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Alt Phone# </b>
+                <label htmlFor='validation-form-1' className='form-label ml-5 font-bold'>
+                  Alt Phone#
                 </label>
                 <input
                   {...register('addressCity')}
                   id='validation-form-3'
-                  type='password'
-                  name='addressCity'
+                  type='text'
+                  name='altPhoneDirector'
                   className={classnames({
                     'form-control': true,
                     'border-danger': errors.password,
                   })}
                   placeholder='Alt Phone'
                 />
-               
-              </div>
-              <button 
-              className='btn btn-primary btn-md active mt-7'
-              style={{ color: 'teal', background: 'white' }}>Add</button>
-            </div>
 
+              </div>
+              <button
+                className='btn btn-primary btn-md active mt-7'
+                style={{ color: 'teal', background: 'white' }}>Add</button>
+            </div>
+            <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400 mt-3'>
+              <h2 className='font-medium text-base mr-auto'>
+                COVERED INDIVIDUALS
+              </h2>
+              <p className='pr-5 mt-2'>
+                For each covered individual, we must receive a background
+                screening form, fingerprints (when required), and all required
+                fees as part of this application.<br />
+                Covered individual means: providers; owners; members of the
+                governing body; employees; caregivers, volunteers, excluding
+                parents of children enrolled in the program; individuals age
+                12 years and older residing in a facility where child care is
+                provided; and anyone who has unsupervised contact with any
+                child in care. This information will be used to screen covered
+                individuals for criminal convictions and child abuse/neglect.
+              </p>
+            </div>
+            </>
             {({ toggle }) => (
               <>
                 <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400'>
@@ -1174,17 +1180,16 @@ function handleClick(){
                 <h2 className='font-medium text-base mr-auto'>
                   DOCUMENTS REQUESTED
                 </h2>
-              </div>
-              <div className='flex ml-5'>
-                <p className='pr-5 mt-5'>
+                <p className='pr-5 mt-2'>
                   You can upload a copy of any document by clicking the "Select
                   File" button. Uploaded documents will be submitted with this
                   application. Only documents inPDF format are accepted.
                 </p>
-              </div>
+             </div>
+
               <div className='flex ml-5'>
                 <ul>
-                  <li className='mt-5'>
+                  <li className=''>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>

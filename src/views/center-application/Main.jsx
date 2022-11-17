@@ -1000,8 +1000,14 @@ function handleClick(){
                   aria-label='.form-select-lg example'
                 >
                   <option>--Select--</option>
-                  <option>Liam Neeson</option>
-                  <option>Daniel Craig</option>
+                  <option>Individual Owner / Sole Proprietor</option>
+                  <option>Partnership</option>
+                  <option>Limited Liability Company</option>
+                  <option>For Profit Corporation</option>
+                  <option>Non-Profit Corporation -- 501(c)(3)</option>
+                  <option>Local Government</option>
+                  <option>State Government</option>
+                  <option>Federal Government</option>
                 </select>
               </div>
             </div>

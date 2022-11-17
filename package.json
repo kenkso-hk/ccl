@@ -36,6 +36,7 @@
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.29.0",
     "react-router-dom": "^6.3.0",
+    "react-select": "^5.6.1",
     "react-transition-group": "^4.4.2",
     "recoil": "^0.7.0",
     "simplebar": "^5.3.6",
