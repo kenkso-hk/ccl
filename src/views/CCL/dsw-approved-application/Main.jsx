@@ -14,7 +14,7 @@ import * as yup from 'yup'
 import logoUrl from '@/assets/images/ccl-logo.png'
 //import { useState } from "preact/hooks";
 import Reeact, { useState, useEffect } from 'react'
-import DropdownTime from '../../components/register-dropdown-time/Main'
+import DropdownTime from '../../../components/register-dropdown-time/Main'
 import { add } from 'lodash'
 
 function Main() {
@@ -96,7 +96,7 @@ function Main() {
 
       <div className='intro-y items-center mt-4'>
         <h1 className='text-lg text-white mr-auto'>
-          <b>NEW CHILD CARE DSW APPROVED APPLICATION</b>
+          <b>NEW CHILD CARE DWS APPROVED APPLICATION</b>
         </h1>
         <p className='text-md text-white'>
           {' '}
@@ -777,8 +777,8 @@ function Main() {
                     </td>
                   </tr>
                   <tr className='border-b border-slate-200/60 dark:border-darkmode-400'>
-                    <td>
-                      <input type='checkbox' className='' />
+                    <td disabled>
+                      <input type='checkbox' />
                       <b className='ml-2'>Monday</b>
                     </td>
                     <td>
@@ -968,27 +968,32 @@ function Main() {
 
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             <>
-              <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400'>
-                <h2 className='font-medium text-base mr-auto'>
-                  COVERED INDIVIDUALS
-                </h2>
-              </div>
-              <div className='flex ml-5'>
-                <p className='pr-5'>
-                  For each covered individual, we must receive a background
-                  screening form, fingerprints (when required), and all required
-                  fees as part of this application.<br></br>
-                  Covered individual means: providers; owners; members of the
-                  governing body; employees; caregivers, volunteers, excluding
-                  parents of children enrolled in the program; individuals age
-                  12 years and older residing in a facility where child care is
-                  provided; and anyone who has unsupervised contact with any
-                  child in care. This information will be used to screen covered
-                  individuals for criminal convictions and child abuse/neglect.
-                </p>
-              </div>
-            </>
+            <label htmlFor='validation-form-1' className='form-label ml-5 font-bold intro-y mt-4 pb-4 text-lg'>
+            PERSONNEL INFORMATION
+            </label>
+            <div className='flex gap-1 ml-5'>
+        
 
+        
+            </div>
+            <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400 mt-3'>
+              <h2 className='font-medium text-base mr-auto'>
+                COVERED INDIVIDUALS
+              </h2>
+              <p className='pr-5 mt-2'>
+                For each covered individual, we must receive a background
+                screening form, fingerprints (when required), and all required
+                fees as part of this application.<br />
+                Covered individual means: providers; owners; members of the
+                governing body; employees; caregivers, volunteers, excluding
+                parents of children enrolled in the program; individuals age
+                12 years and older residing in a facility where child care is
+                provided; and anyone who has unsupervised contact with any
+                child in care. This information will be used to screen covered
+                individuals for criminal convictions and child abuse/neglect.
+              </p>
+            </div>
+            </>
             {({ toggle }) => (
               <>
                 <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400'>
@@ -1032,40 +1037,57 @@ function Main() {
                 <h2 className='font-medium text-base mr-auto'>
                   DOCUMENTS REQUESTED
                 </h2>
-              </div>
-              <div className='flex ml-5'>
-                <p className='pr-5 mt-5'>
-                  You can upload a copy of any document by clicking the "Select File" button.
-                  Uploaded documents will be submitted with this application.
-                  Only documents in PDF format are accepted.
+                <p className='pr-5 mt-2'>
+                  You can upload a copy of any document by clicking the "Select
+                  File" button. Uploaded documents will be submitted with this
+                  application. Only documents inPDF format are accepted.
                 </p>
-              </div>
+             </div>
+
               <div className='flex ml-5'>
                 <ul>
-                  <li className='mt-5'>
+                  <li className=''>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current fire clearance or a copy of a document from the
-                    local fire authority stating a fire clearance is not needed.
-                    (Contact your local fire authority for this.)
+                    A copy of your current fire clearance or a copy of a
+                    document from the local fire authority stating a fire
+                    clearance is not needed. (Contact your local fireauthority
+                    for this.)
                   </li>
                   <button className='btn'>Select File</button>
                   <li className='mt-5'>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current business license or a copy of a receipt verifying
-                    application or a copy of a document from a city/county employee stating
-                    a business license is not required. (Contact your city/county for this.)
+                    A copy of your current business license or a copy of a
+                    receipt verifying application or a copy of a document from a
+                    city/county employee stating abusiness license is not
+                    required. (Contact your city/county for this.)
                   </li>
                   <button className='btn'>Select File</button>
                   <li className='mt-5'>
                     <b style={{ color: 'teal' }} className='mr-2'>
                       {'\u2022'}
                     </b>
-                    A copy of your current local health department kitchen inspection.
-                    (Contact your local health department for this.)
+                    A copy of your current local health department kitchen
+                    inspection. (Contact your local health department for this.)
+                  </li>
+                  <button className='btn'>Select File</button>
+                  <li className='mt-5'>
+                    <b style={{ color: 'teal' }} className='mr-2'>
+                      {'\u2022'}
+                    </b>
+                    A copy of the proposed director's educational credentials.
+                    (found in rule)
+                  </li>
+                  <button className='btn'>Select File</button>
+                  <li className='mt-5'>
+                    <b style={{ color: 'teal' }} className='mr-2'>
+                      {'\u2022'}
+                    </b>
+                    A copy of your facility floor plan (does not need to be an
+                    architectural rendition).
                   </li>
                   <button className='btn'>Select File</button>
                 </ul>
@@ -1075,11 +1097,12 @@ function Main() {
               </div>
               <div className='flex ml-5'>
                 <p className='pr-5'>
-                  You can submit required documentation at any time. However, your application 
-                  will not be complete until Child Care Licensing has received all required 
-                  documents, background checks, and all required fees. You have 6 months from 
-                  the date of your application to submit all required documents and fees or your 
-                  application will be denied.
+                  You can submit required documentation at any time. However,
+                  your application will not be complete until Child Care
+                  Licensing has received all required documents, background
+                  checks, and all required fees. You have 6 months from the date
+                  of your application to submit all required documents and fees
+                  oryour application will be denied.
                 </p>
               </div>
             </>
@@ -1112,6 +1135,8 @@ function Main() {
                   <div className="mt-2 mr-10 ml-5">
                     <ul>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $62.00 License fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $200.00 New Center fee.</li>
+                      <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $1.75 Per Child fee.</li>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $20.00 Background Screening fee (1 form and fee per covered individual).</li>
                       <li><b style={{ color: 'teal' }} className="mr-2">{'\u2022'}</b> $33.25 Fingerprint fee (1 set of fingerprints and fee per covered individual who is at least 18 years of age).</li>
                     </ul>

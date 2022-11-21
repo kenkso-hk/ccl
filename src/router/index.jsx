@@ -75,6 +75,7 @@ import CCLApplication from '../views/ccl-application/Main'
 import CenterProviderApplication from '../views/center-provider-application/Main'
 import LicenseFamilyApplication from '../views/licenced-family-application/Main'
 import ResidentialCertificateApplication from "../views/residential-certificate-application/Main"
+import DWSApprovedApplication from "../views/CCL/dsw-approved-application/Main"
 
 function Router() {
   const routes = [
@@ -911,6 +912,10 @@ function Router() {
     {
       path:'/residential-certificate-application',
       element: <ResidentialCertificateApplication />,
+    },
+    {
+      path:'/ccl/dsw-approved-application',
+      element: <DWSApprovedApplication />,
     },
     {
       path: '/error-page',

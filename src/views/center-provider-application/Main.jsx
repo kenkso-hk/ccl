@@ -4,8 +4,6 @@ import {
   Preview,
   Source,
   Highlight,
-  Dropdown,
-  DropdownToggle,
 } from '@/base-components'
 import { useForm } from 'react-hook-form'
 import Toastify from 'toastify-js'
@@ -779,8 +777,8 @@ function Main() {
                     </td>
                   </tr>
                   <tr className='border-b border-slate-200/60 dark:border-darkmode-400'>
-                    <td>
-                      <input type='checkbox' className='' />
+                    <td disabled>
+                      <input type='checkbox' />
                       <b className='ml-2'>Monday</b>
                     </td>
                     <td>
@@ -1009,7 +1007,7 @@ function Main() {
                     'form-control': true,
                     'border-danger': errors.password,
                   })}
-                  placeholder='Street Address'
+                  placeholder='Name'
                 />
               </div>
               <div className='grid grid-cols-1'>
@@ -1025,7 +1023,7 @@ function Main() {
                     'form-control': true,
                     'border-danger': errors.password,
                   })}
-                  placeholder='Apt #, Suite #, etc..'
+                  placeholder='Email'
                 />
               </div>
               <div className='grid grid-cols-1'>
@@ -1041,7 +1039,7 @@ function Main() {
                     'form-control': true,
                     'border-danger': errors.password,
                   })}
-                  placeholder='City'
+                  placeholder='(___) - ___ - ____'
                 />
               </div>
             </div>
