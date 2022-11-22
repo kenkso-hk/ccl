@@ -14,7 +14,7 @@ import * as yup from 'yup'
 import logoUrl from '@/assets/images/ccl-logo.png'
 //import { useState } from "preact/hooks";
 import Reeact, { useState, useEffect } from 'react'
-import DropdownTime from '../../components/register-dropdown-time/Main'
+import DropdownTime from '../../../components/register-dropdown-time/Main'
 import { add } from 'lodash'
 
 function Main() {
@@ -96,7 +96,7 @@ function Main() {
 
       <div className='intro-y items-center mt-4'>
         <h1 className='text-lg text-white mr-auto'>
-          <b>NEW CHILD CARE CENTER PROVIDER APPLICATION</b>
+          <b>NEW CHILD CARE OUT OF SCHOOL TIME PROGRAM APPLICATION</b>
         </h1>
         <p className='text-md text-white'>
           {' '}
@@ -713,24 +713,13 @@ function Main() {
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             {({ toggle }) => (
               <>
-                <div className='items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400'>
-                  <h2 className='font-medium text-base mr-auto mb-2'>
-                    WHAT AGES OF CHILDREN WILL YOU ACCEPT?
+                <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400'>
+                  <h2 className='font-medium text-base mr-auto mb-3'>
+                    NEEDS LABEL
                   </h2>
-                </div>
-                <div className='flex ml-5 mt-3'>
-                  <div className='mr-12'>
-                    <input type='checkbox' className='rounded-full mr-1' />
-                    0-12 years
-                  </div>
-                  <div className='mr-12'>
-                    <input type='checkbox' className='rounded-full mr-1' />
-                    2-5 years
-                  </div>
-                  <div className='mr-12'>
-                    <input type='checkbox' className='rounded-full mr-1' />5 and
-                    older
-                  </div>
+                    <input type='checkbox' className='mr-3' />
+                    I understand that I may only care for children 5 years and older. If I care for children younger than 5 years 
+                    a Child Care Center license will be required.
                 </div>
               </>
             )}
@@ -1326,9 +1315,9 @@ function Main() {
                 </p>
                 <p className='ml-5 mr-10 mt-2'>
                   I agree, for the purpose of determining compliance with child
-                  care licensing rules established by the Department of Health
+                  care licensing rules established by the Department of Health and Human Services,
                   and Utah State licensing laws, to allow authorized Department
-                  of Health representatives with proper identification to:
+                  of Health and Human Services representatives with proper identification to:
                 </p>
                 <div className='mt-2 mr-10 ml-10'>
                   <ul>

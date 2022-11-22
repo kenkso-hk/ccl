@@ -72,10 +72,13 @@ import Chart from '../views/chart/Main'
 import Slider from '../views/slider/Main'
 import ImageZoom from '../views/image-zoom/Main'
 import CCLApplication from '../views/ccl-application/Main'
-import CenterProviderApplication from '../views/center-provider-application/Main'
-import LicenseFamilyApplication from '../views/licenced-family-application/Main'
-import ResidentialCertificateApplication from "../views/residential-certificate-application/Main"
-import DWSApprovedApplication from "../views/CCL/dsw-approved-application/Main"
+import CenterProviderApplication from '../views/ccl/center-provider-application/Main'
+import LicenseFamilyApplication from '../views/ccl/licenced-family-application/Main'
+import ResidentialCertificateApplication from "../views/ccl/residential-certificate-application/Main"
+import DWSApprovedApplication from "../views/ccl/dws-approved-application/Main"
+import CommercialPreschoolApplication from "../views/ccl/commercial-preschool-application/Main"
+import HourlyCenterApplication from "../views/ccl/hourly-center-application/Main"
+import OutOfSchoolTimeProgramApplication from "../views/ccl/out-of-school-time-program-application/Main"
 
 function Router() {
   const routes = [
@@ -902,20 +905,32 @@ function Router() {
       element: <CCLApplication />,
     },
     {
-      path: '/center-provider-application',
+      path: '/ccl/center-provider-application',
       element: <CenterProviderApplication />,
     },
     {
-      path:'/licensed-family-application',
+      path:'/ccl/licensed-family-application',
       element: <LicenseFamilyApplication />,
     },
     {
-      path:'/residential-certificate-application',
+      path:'/ccl/residential-certificate-application',
       element: <ResidentialCertificateApplication />,
     },
     {
-      path:'/ccl/dsw-approved-application',
+      path:'/ccl/dws-approved-application',
       element: <DWSApprovedApplication />,
+    },
+    {
+      path:'/ccl/commercial-preschool-application',
+      element: <CommercialPreschoolApplication />,
+    },
+    {
+      path: '/ccl/hourly-center-application',
+      element: <HourlyCenterApplication />,
+    },
+    {
+      path: '/ccl/out-of-shchool-time-program-application',
+      element: <OutOfSchoolTimeProgramApplication />
     },
     {
       path: '/error-page',

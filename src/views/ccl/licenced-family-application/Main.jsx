@@ -4,8 +4,6 @@ import {
   Preview,
   Source,
   Highlight,
-  Dropdown,
-  DropdownToggle,
 } from '@/base-components'
 import { useForm } from 'react-hook-form'
 import Toastify from 'toastify-js'
@@ -16,7 +14,7 @@ import * as yup from 'yup'
 import logoUrl from '@/assets/images/ccl-logo.png'
 //import { useState } from "preact/hooks";
 import Reeact, { useState, useEffect } from 'react'
-import DropdownTime from '../../components/register-dropdown-time/Main'
+import DropdownTime from '../../../components/register-dropdown-time/Main'
 import { add } from 'lodash'
 
 function Main() {
@@ -98,7 +96,7 @@ function Main() {
 
       <div className='intro-y items-center mt-4'>
         <h1 className='text-lg text-white mr-auto'>
-          <b>NEW RESIDENTIAL CERTIFICATE APPLICATION</b>
+          <b>NEW CHILD CARE LICENSED FAMILY APPLICATION</b>
         </h1>
         <p className='text-md text-white'>
           {' '}
@@ -990,146 +988,6 @@ function Main() {
                 </p>
               </div>
             </>
-            <div className='form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0'>
-              <label className='form-check-label mr-5' htmlFor='show-example-5'>
-                Ownership Type:
-              </label>
-              <div className='flex flex-col sm:flex-row items-center'>
-                <select
-                  className='form-select form-select-md sm:mt-2 sm:mr-2'
-                  aria-label='.form-select-lg example'
-                >
-                  <option>--Select--</option>
-                  <option>Liam Neeson</option>
-                  <option>Daniel Craig</option>
-                </select>
-              </div>
-            </div>
-
-            <div className='flex gap-1 ml-5 mb-5 mt-5'>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Licensee Name: </b>
-                </label>
-                <input
-                  {...register('address')}
-                  id='validation-form-3'
-                  type='password'
-                  name='address'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='Street Address'
-                />
-              </div>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Email: </b>
-                </label>
-                <input
-                  {...register('address2')}
-                  id='validation-form-3'
-                  type='password'
-                  name='address2'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='Apt #, Suite #, etc..'
-                />
-              </div>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Phone: </b>
-                </label>
-                <input
-                  {...register('addressCity')}
-                  id='validation-form-3'
-                  type='password'
-                  name='addressCity'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='City'
-                />
-              </div>
-            </div>
-
-            <label htmlFor='validation-form-1' className='form-label ml-5'>
-              <b>DIRECTOR(S) </b>
-            </label>
-            <div className='flex gap-1 ml-5'>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>First Name </b>
-                </label>
-                <input
-                  {...register('address')}
-                  id='validation-form-3'
-                  type='password'
-                  name='address'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='First Name'
-                />
-              </div>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Last Name </b>
-                </label>
-                <input
-                  {...register('address2')}
-                  id='validation-form-3'
-                  type='password'
-                  name='address2'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='Last Name'
-                />
-              </div>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Phone# </b>
-                </label>
-                <input
-                  {...register('addressCity')}
-                  id='validation-form-3'
-                  type='password'
-                  name='addressCity'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='Phone'
-                />
-              </div>
-              <div className='grid grid-cols-1'>
-                <label htmlFor='validation-form-1' className='form-label ml-5'>
-                  <b>Alt Phone# </b>
-                </label>
-                <input
-                  {...register('addressCity')}
-                  id='validation-form-3'
-                  type='password'
-                  name='addressCity'
-                  className={classnames({
-                    'form-control': true,
-                    'border-danger': errors.password,
-                  })}
-                  placeholder='Alt Phone'
-                />
-
-              </div>
-              <button
-                className='btn btn-primary btn-md active mt-7'
-                style={{ color: 'teal', background: 'white' }}>Add</button>
-            </div>
 
             {({ toggle }) => (
               <>

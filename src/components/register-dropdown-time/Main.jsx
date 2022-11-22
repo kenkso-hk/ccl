@@ -112,7 +112,7 @@ function DropdownTime() {
     return (
 
         <Select
-            className='form-select form-select-md sm:mt-2 sm:mr-2 mb-3'
+            className=' form-select-md sm:mt-2 sm:mr-2 mb-3'
             aria-label='.form-select-lg example'
             options={timeList}
             placeholder="--Select Time--"
