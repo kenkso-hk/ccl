@@ -75,9 +75,23 @@ function Main() {
   }
 
   const [isCheck, setIsCheck] = useState(false);
+  const [isCheck2, setIsCheck2] = useState(true);
+  const [isCheck3, setIsCheck3] = useState(true);
 
   function handleClick() {
     setIsCheck(prevValue => {
+      return !prevValue;
+    });
+  }
+
+  function handleClick2() {
+    setIsCheck2(prevValue => {
+      return !prevValue;
+    });
+  }
+
+  function handleClick3() {
+    setIsCheck3(prevValue => {
       return !prevValue;
     });
   }
@@ -192,10 +206,9 @@ function Main() {
                         <div className='sm:flex-row mt-5 mr-12 w-96'>
                           <label
                             htmlFor='validation-form-1'
-                            className='form-label w-full'
-                          >
-                            <b> Email </b>
-                            <br></br>
+                            className='form-label w-full font-bold'>
+                            Email
+                            <br />
                             <span
                               className='sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500'
                               style={{ color: 'red' }}
@@ -207,10 +220,9 @@ function Main() {
                         <div className='sm:flex-row mt-5 ml-12'>
                           <label
                             htmlFor='validation-form-1'
-                            className='form-label w-full'
-                          >
-                            <b> Phone </b>
-                            <br></br>
+                            className='form-label w-full font-bold'>
+                            Phone
+                            <br />
                             <span
                               className='sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500'
                               style={{ color: 'red' }}
@@ -335,7 +347,6 @@ function Main() {
                           />
                         </div>
                       </div>
-
                       <div className='input-form flex'>
                         <div className='sm:flex-row mt-5 mr-12 '>
                           <label
@@ -437,14 +448,11 @@ function Main() {
                         <div className='sm:flex-row mt-5 mr-12 '>
                           <label
                             htmlFor='validation-form-1'
-                            className='form-label w-full'
-                          >
+                            className='form-label w-full'>
                             <b> Requested capacity (# of children): </b>
                             <br></br>
                             <span
-                              className='sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500 '
-                              style={{ color: 'red' }}
-                            >
+                              className='sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500'>
                               *Required
                             </span>
                           </label>
@@ -468,7 +476,6 @@ function Main() {
                           </div>
                         )}
                       </div>
-
                       <p className='mt-5'>
                         The maximum capacity will be determined according to
                         Child Care Licensing rule.
@@ -477,9 +484,8 @@ function Main() {
                       <div className='input-form mt-3'>
                         <label
                           htmlFor='validation-form-6'
-                          className='form-label w-full flex flex-col sm:flex-row'
-                        >
-                          <b> Food Program Sponsor (if any): </b>
+                          className='form-label w-full flex flex-col sm:flex-row font-bold'>
+                          Food Program Sponsor (if any):
                         </label>
                         <input
                           {...register('comment')}
@@ -493,7 +499,6 @@ function Main() {
                         />
                       </div>
                     </form>
-
                     <form className='validate-form' onSubmit={onSubmit}></form>
 
                     {/* END: Validation Form */}
@@ -601,7 +606,6 @@ function Main() {
                         )}
                       />
                     </div>
-
                     <div>
                       <input
                         {...register('contactPhone')}
@@ -671,7 +675,6 @@ function Main() {
                         )}
                       />
                     </div>
-
                     <div>
                       <input
                         {...register('contactPhone')}
@@ -688,7 +691,6 @@ function Main() {
                         placeholder='(___) ___ - ____'
                       />
                     </div>
-
                     <div>
                       <input
                         {...register('contactEmail')}
@@ -968,31 +970,56 @@ function Main() {
 
           <PreviewComponent className='intro-y box mt-4 pb-4'>
             <>
-            <label htmlFor='validation-form-1' className='form-label ml-5 font-bold intro-y mt-4 pb-4 text-lg'>
-            PERSONNEL INFORMATION
-            </label>
-            <div className='flex gap-1 ml-5'>
-        
+              <label htmlFor='validation-form-1' className='form-label ml-5 font-bold intro-y mt-4 pb-4 text-lg'>
+                APPLICANT (YOUR) INFORMATION
+              </label>
+              <p className='ml-5 mb-2'>You must be at least 18 years old and legally able to work in the United States to provide care for children of DWS customers.</p>
 
-        
-            </div>
-            <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400 mt-3'>
-              <h2 className='font-medium text-base mr-auto'>
-                COVERED INDIVIDUALS
-              </h2>
-              <p className='pr-5 mt-2'>
-                For each covered individual, we must receive a background
-                screening form, fingerprints (when required), and all required
-                fees as part of this application.<br />
-                Covered individual means: providers; owners; members of the
-                governing body; employees; caregivers, volunteers, excluding
-                parents of children enrolled in the program; individuals age
-                12 years and older residing in a facility where child care is
-                provided; and anyone who has unsupervised contact with any
-                child in care. This information will be used to screen covered
-                individuals for criminal convictions and child abuse/neglect.
-              </p>
-            </div>
+              <input type='checkbox' className='ml-5 mr-2' onClick={handleClick2} /><b> I am eligible to work in the United States.</b>
+
+              <div className='mt-3 ml-5' >
+                <label className='sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500 font-bold'
+                  style={{ color: 'red' }}>* Required</label>
+                <div>
+                  <input type='checkbox' className='mr-2 rounded-full' disabled={isCheck2} /><b>I am a United States citizen</b>
+                </div>
+                <div>
+                  <input type='checkbox' className='mr-2 rounded-full' disabled={isCheck2} onClick={handleClick3} /><b>My Alien or Admission Number is:</b>
+                  <div className='ml-4 mt-2'>
+                    <input
+                      {...register('anumber')}
+                      id='validation-form-6'
+                      type='text'
+                      name='anumber'
+                      disabled={isCheck3}
+                      className={classnames(
+                        {
+                          'form-control': true,
+                          'border-danger': errors.anumber,
+                        },
+                        'w-48 ml-2 mr-12'
+                      )}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className='items-center p-5 border-slate-200/60 dark:border-darkmode-400 mt-3'>
+                <h2 className='font-medium text-base mr-auto'>
+                  COVERED INDIVIDUALS
+                </h2>
+                <p className='pr-5 mt-2'>
+                  For each covered individual, we must receive a background
+                  screening form, fingerprints (when required), and all required
+                  fees as part of this application.<br />
+                  Covered individual means: providers; owners; members of the
+                  governing body; employees; caregivers, volunteers, excluding
+                  parents of children enrolled in the program; individuals age
+                  12 years and older residing in a facility where child care is
+                  provided; and anyone who has unsupervised contact with any
+                  child in care. This information will be used to screen covered
+                  individuals for criminal convictions and child abuse/neglect.
+                </p>
+              </div>
             </>
             {({ toggle }) => (
               <>
@@ -1042,7 +1069,7 @@ function Main() {
                   File" button. Uploaded documents will be submitted with this
                   application. Only documents inPDF format are accepted.
                 </p>
-             </div>
+              </div>
 
               <div className='flex ml-5'>
                 <ul>
